@@ -11,12 +11,12 @@ const stats = [
 
 <section id="impacto" class="py-20 lg:py-28 bg-primary-dark text-white relative overflow-hidden">
 	<div class="absolute inset-0 opacity-10">
-		<div class="absolute -top-20 -left-20 w-80 h-80 bg-secondary rounded-full blur-3xl"></div>
-		<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+		<div class="absolute -top-20 -left-20 w-80 h-80 bg-secondary rounded-full blur-3xl animate-float-slow"></div>
+		<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-accent rounded-full blur-3xl animate-float-slower"></div>
 	</div>
 
 	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-highlight font-semibold text-sm uppercase tracking-wider">Nuestro Impacto</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3">
 				Números que hablan por <span class="text-highlight">nosotros</span>
@@ -26,10 +26,10 @@ const stats = [
 			</p>
 		</div>
 
-		<div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
-			{stats.map(stat => (
-				<div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
-					<p class="text-4xl sm:text-5xl font-extrabold text-highlight">{stat.numero}</p>
+		<div class="grid grid-cols-2 lg:grid-cols-3 gap-8" id="stats-grid">
+			{stats.map((stat, i) => (
+				<div data-animate data-delay={String(i * 150)} class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+					<p class="text-4xl sm:text-5xl font-extrabold text-highlight" data-count={stat.numero}>{stat.numero}</p>
 					<p class="text-lg font-semibold mt-2">{stat.label}</p>
 					<p class="text-sm text-white/50 mt-1">{stat.descripcion}</p>
 				</div>
@@ -37,3 +37,38 @@ const stats = [
 		</div>
 	</div>
 </section>
+
+<script>
+	function animateCount(el: HTMLElement) {
+		const raw = el.dataset.count || '';
+		const prefix = raw.match(/^[^0-9]*/)?.[0] || '';
+		const suffix = raw.match(/[^0-9]*$/)?.[0] || '';
+		const numStr = raw.replace(/[^0-9]/g, '');
+		const target = parseInt(numStr, 10);
+		if (isNaN(target)) return;
+
+		const duration = 2000;
+		const start = performance.now();
+
+		function update(now: number) {
+			const progress = Math.min((now - start) / duration, 1);
+			const eased = 1 - Math.pow(1 - progress, 3);
+			const current = Math.floor(eased * target);
+			el.textContent = prefix + current.toLocaleString() + suffix;
+			if (progress < 1) requestAnimationFrame(update);
+		}
+		requestAnimationFrame(update);
+	}
+
+	const statsObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.querySelectorAll<HTMLElement>('[data-count]').forEach(animateCount);
+				statsObserver.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.3 });
+
+	const grid = document.getElementById('stats-grid');
+	if (grid) statsObserver.observe(grid);
+</script>

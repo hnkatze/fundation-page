@@ -5,7 +5,18 @@
       "Bash(git init:*)",
       "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" status)",
       "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" log --oneline -5)",
-      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" add .gitignore CLAUDE.md README.md astro.config.mjs package.json package-lock.json tsconfig.json public/ src/ .vscode/ .claude/)"
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" add .gitignore CLAUDE.md README.md astro.config.mjs package.json package-lock.json tsconfig.json public/ src/ .vscode/ .claude/)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" commit -m \"$\\(cat <<''EOF''\nfeat: landing page completa de Honduras Social\n\nEstructura de componentes para la fundación: Navbar, Hero, QuiénesSomos,\nPilares, ImpactoNumeros, Proyectos, Testimonios, ComoAyudar, Transparencia,\nEquipo, Contacto y Footer. Paleta pastel con Tailwind CSS v4.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" remote add origin https://github.com/hnkatze/fundation-page.git)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" branch -M main)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" push -u origin main)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" config user.name)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" config user.email)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" config --local user.name \"hnkatze\")",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" config --local user.email \"henriquezhector1@hotmail.com\")",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" add README.md)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" commit -m \"$\\(cat <<''EOF''\ndocs: actualizar README con info del proyecto\nEOF\n\\)\")",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" push)"
     ]
   }
 }

@@ -47,7 +47,7 @@ const proyectos = [
 
 <section id="proyectos" class="py-20 lg:py-28 bg-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Proyectos</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Iniciativas que <span class="text-primary">generan cambio</span>
@@ -58,8 +58,8 @@ const proyectos = [
 		</div>
 
 		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-			{proyectos.map(proyecto => (
-				<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+			{proyectos.map((proyecto, i) => (
+				<div data-animate data-delay={String(i * 100)} class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
 					<div class:list={[proyecto.color, "h-2"]}></div>
 					<div class="p-6">
 						<div class="flex items-center justify-between mb-3">

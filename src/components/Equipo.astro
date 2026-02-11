@@ -41,7 +41,7 @@ const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-primary-light', '
 
 <section id="equipo" class="py-20 lg:py-28 bg-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Nuestro Equipo</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Las personas detrás del <span class="text-primary">cambio</span>
@@ -53,7 +53,7 @@ const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-primary-light', '
 
 		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			{equipo.map((miembro, i) => (
-				<div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+				<div data-animate data-delay={String(i * 100)} class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
 					<div class:list={[colors[i % colors.length], "w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4"]}>
 						{getInitials(miembro.nombre)}
 					</div>

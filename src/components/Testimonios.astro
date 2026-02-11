@@ -23,7 +23,7 @@ const testimonios = [
 
 <section class="py-20 lg:py-28 bg-white">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Testimonios</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Voces que inspiran <span class="text-primary">esperanza</span>
@@ -34,8 +34,8 @@ const testimonios = [
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8">
-			{testimonios.map(t => (
-				<div class="bg-warm rounded-2xl p-8 relative">
+			{testimonios.map((t, i) => (
+				<div data-animate data-delay={String(i * 150)} class="bg-warm rounded-2xl p-8 relative">
 					<svg class="w-10 h-10 text-secondary/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
 						<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" />
 					</svg>

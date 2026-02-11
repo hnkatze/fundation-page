@@ -29,7 +29,7 @@ const pilares = [
 
 <section id="pilares" class="py-20 lg:py-28 bg-white">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Nuestros Pilares</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Cuatro ejes que <span class="text-primary">transforman vidas</span>
@@ -40,8 +40,8 @@ const pilares = [
 		</div>
 
 		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-			{pilares.map(pilar => (
-				<div class="group relative bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all border border-gray-100">
+			{pilares.map((pilar, i) => (
+				<div data-animate data-delay={String(i * 150)} class="group relative bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all border border-gray-100">
 					<div class:list={[pilar.color, "w-16 h-16 rounded-xl flex items-center justify-center text-white mb-6"]}>
 						<Fragment set:html={pilar.icono} />
 					</div>

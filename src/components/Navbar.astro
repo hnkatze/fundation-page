@@ -9,17 +9,17 @@ const links = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100" id="navbar">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent transition-all duration-300" id="navbar">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center justify-between h-16">
 			<a href="/" class="flex items-center gap-2">
-				<span class="text-2xl font-extrabold text-primary">Honduras</span>
-				<span class="text-2xl font-extrabold text-secondary">Social</span>
+				<span class="text-2xl font-extrabold text-white transition-colors duration-300">Honduras</span>
+				<span class="text-2xl font-extrabold text-white transition-colors duration-300">Social</span>
 			</a>
 
 			<div class="hidden md:flex items-center gap-6">
 				{links.map(link => (
-					<a href={link.href} class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">
+					<a href={link.href} class="text-sm font-medium text-white/80 hover:text-white transition-colors">
 						{link.label}
 					</a>
 				))}
@@ -60,4 +60,26 @@ const links = [
 			menu?.classList.add('hidden');
 		});
 	});
+
+	const navbar = document.getElementById('navbar');
+	const logos = navbar?.querySelectorAll('a[href="/"] span') as NodeListOf<HTMLElement>;
+	const navLinks = navbar?.querySelectorAll('.hidden.md\\:flex a:not(.bg-secondary)');
+
+	function updateNavbar() {
+		if (!navbar) return;
+		if (window.scrollY > 80) {
+			navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
+			navbar.classList.remove('bg-transparent', 'border-transparent');
+			logos?.forEach((el, i) => { el.classList.remove('text-white'); el.classList.add(i === 0 ? 'text-primary' : 'text-secondary'); });
+			navLinks?.forEach(l => { l.classList.remove('text-white/80'); l.classList.add('text-gray-600'); });
+		} else {
+			navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
+			navbar.classList.add('bg-transparent', 'border-transparent');
+			logos?.forEach(el => { el.classList.remove('text-primary', 'text-secondary'); el.classList.add('text-white'); });
+			navLinks?.forEach(l => { l.classList.remove('text-gray-600'); l.classList.add('text-white/80'); });
+		}
+	}
+
+	window.addEventListener('scroll', updateNavbar);
+	updateNavbar();
 </script>

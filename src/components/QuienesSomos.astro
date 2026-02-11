@@ -20,7 +20,7 @@ const valores = [
 
 <section id="quienes-somos" class="py-20 lg:py-28 bg-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Quiénes Somos</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Una fundación nacida del <span class="text-primary">corazón de Honduras</span>
@@ -31,8 +31,8 @@ const valores = [
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8">
-			{valores.map(item => (
-				<div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+			{valores.map((item, i) => (
+				<div data-animate data-delay={String(i * 150)} class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
 					<span class="text-4xl">{item.icon}</span>
 					<h3 class="text-xl font-bold text-gray-900 mt-4 mb-3">{item.titulo}</h3>
 					<p class="text-gray-600 leading-relaxed">{item.texto}</p>

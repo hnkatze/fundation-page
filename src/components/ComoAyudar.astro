@@ -37,7 +37,7 @@ const formas = [
 
 <section id="como-ayudar" class="py-20 lg:py-28 bg-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div data-animate class="text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Cómo Ayudar</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Tu apoyo <span class="text-primary">transforma vidas</span>
@@ -48,8 +48,8 @@ const formas = [
 		</div>
 
 		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-			{formas.map(forma => (
-				<div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all group text-center">
+			{formas.map((forma, i) => (
+				<div data-animate data-delay={String(i * 150)} class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all group text-center">
 					<div class:list={[forma.color, "w-16 h-16 rounded-full flex items-center justify-center text-white mx-auto mb-5"]}>
 						<Fragment set:html={forma.icono} />
 					</div>
