@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(git init:*)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" status)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" log --oneline -5)",
+      "Bash(git -C \"c:\\\\Users\\\\henri\\\\personal\\\\fundation\" add .gitignore CLAUDE.md README.md astro.config.mjs package.json package-lock.json tsconfig.json public/ src/ .vscode/ .claude/)"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+---
+const valores = [
+	{
+		icon: '🎯',
+		titulo: 'Misión',
+		texto: 'Promover el desarrollo integral de las comunidades hondureñas a través de programas de educación, emprendimiento e inclusión social que generen oportunidades sostenibles.'
+	},
+	{
+		icon: '🔭',
+		titulo: 'Visión',
+		texto: 'Ser la fundación líder en transformación comunitaria en Honduras, donde cada persona tenga acceso a herramientas para construir un futuro digno y próspero.'
+	},
+	{
+		icon: '💛',
+		titulo: 'Valores',
+		texto: 'Transparencia, solidaridad, inclusión, compromiso comunitario y respeto por la diversidad cultural de nuestro país.'
+	}
+];
+---
+
+<section id="quienes-somos" class="py-20 lg:py-28 bg-warm">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Quiénes Somos</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+				Una fundación nacida del <span class="text-primary">corazón de Honduras</span>
+			</h2>
+			<p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+				Honduras Social nació en 2020 con la convicción de que el cambio real empieza en las comunidades. Un grupo de jóvenes profesionales decidió unir esfuerzos para llevar oportunidades educativas y de desarrollo a quienes más lo necesitan.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-8">
+			{valores.map(item => (
+				<div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+					<span class="text-4xl">{item.icon}</span>
+					<h3 class="text-xl font-bold text-gray-900 mt-4 mb-3">{item.titulo}</h3>
+					<p class="text-gray-600 leading-relaxed">{item.texto}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

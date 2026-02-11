@@ -1,0 +1,54 @@
+---
+const pilares = [
+	{
+		icono: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
+		titulo: 'Educación',
+		descripcion: 'Programas de alfabetización, becas escolares, talleres de formación técnica y capacitación digital para jóvenes y adultos.',
+		color: 'bg-primary',
+	},
+	{
+		icono: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+		titulo: 'Emprendimiento',
+		descripcion: 'Microcréditos, mentorías empresariales y acompañamiento para que emprendedores locales creen negocios sostenibles.',
+		color: 'bg-secondary',
+	},
+	{
+		icono: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`,
+		titulo: 'Inclusión Social',
+		descripcion: 'Proyectos enfocados en igualdad de género, derechos de comunidades indígenas y acceso a servicios básicos para poblaciones vulnerables.',
+		color: 'bg-accent',
+	},
+	{
+		icono: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>`,
+		titulo: 'Cooperación Internacional',
+		descripcion: 'Alianzas con ONGs y organismos internacionales para canalizar recursos, conocimiento y buenas prácticas hacia nuestras comunidades.',
+		color: 'bg-primary-dark',
+	},
+];
+---
+
+<section id="pilares" class="py-20 lg:py-28 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Nuestros Pilares</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+				Cuatro ejes que <span class="text-primary">transforman vidas</span>
+			</h2>
+			<p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+				Cada programa está diseñado para generar impacto real y sostenible en las comunidades donde trabajamos.
+			</p>
+		</div>
+
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+			{pilares.map(pilar => (
+				<div class="group relative bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all border border-gray-100">
+					<div class:list={[pilar.color, "w-16 h-16 rounded-xl flex items-center justify-center text-white mb-6"]}>
+						<Fragment set:html={pilar.icono} />
+					</div>
+					<h3 class="text-xl font-bold text-gray-900 mb-3">{pilar.titulo}</h3>
+					<p class="text-gray-600 leading-relaxed text-sm">{pilar.descripcion}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

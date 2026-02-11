@@ -1,0 +1,71 @@
+---
+const documentos = [
+	{ titulo: 'Informe Anual 2024', tipo: 'PDF', descripcion: 'Resultados, estados financieros y logros del año.' },
+	{ titulo: 'Informe Anual 2023', tipo: 'PDF', descripcion: 'Primer año de operaciones con impacto documentado.' },
+	{ titulo: 'Estatutos de la Fundación', tipo: 'PDF', descripcion: 'Marco legal y estructura organizativa.' },
+	{ titulo: 'Política de Uso de Fondos', tipo: 'PDF', descripcion: 'Cómo se distribuye cada lempira recibido.' },
+];
+
+const distribucion = [
+	{ label: 'Programas y Proyectos', porcentaje: 75, color: 'bg-primary' },
+	{ label: 'Administración', porcentaje: 12, color: 'bg-accent' },
+	{ label: 'Captación de Fondos', porcentaje: 8, color: 'bg-secondary' },
+	{ label: 'Reservas', porcentaje: 5, color: 'bg-gray-400' },
+];
+---
+
+<section class="py-20 lg:py-28 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Transparencia</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+				Rendimos cuentas con <span class="text-primary">total apertura</span>
+			</h2>
+			<p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+				La confianza de nuestros donantes y aliados es nuestro mayor activo. Por eso publicamos toda nuestra información financiera.
+			</p>
+		</div>
+
+		<div class="grid lg:grid-cols-2 gap-12 items-start">
+			<div>
+				<h3 class="text-xl font-bold text-gray-900 mb-6">Distribución de Fondos</h3>
+				<div class="space-y-4">
+					{distribucion.map(item => (
+						<div>
+							<div class="flex justify-between text-sm mb-1">
+								<span class="font-medium text-gray-700">{item.label}</span>
+								<span class="font-bold text-gray-900">{item.porcentaje}%</span>
+							</div>
+							<div class="w-full bg-gray-100 rounded-full h-3">
+								<div class:list={[item.color, "h-3 rounded-full transition-all"]} style={`width: ${item.porcentaje}%`}></div>
+							</div>
+						</div>
+					))}
+				</div>
+				<p class="text-sm text-gray-500 mt-4">
+					* Datos correspondientes al ejercicio fiscal 2024
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-900 mb-6">Documentos Públicos</h3>
+				<div class="space-y-3">
+					{documentos.map(doc => (
+						<a href="#" class="flex items-center gap-4 bg-warm rounded-xl p-4 hover:bg-warm-dark transition-colors group">
+							<div class="bg-primary/10 rounded-lg p-3 group-hover:bg-primary/20 transition-colors">
+								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+								</svg>
+							</div>
+							<div class="flex-1">
+								<p class="font-semibold text-gray-900 text-sm">{doc.titulo}</p>
+								<p class="text-xs text-gray-500">{doc.descripcion}</p>
+							</div>
+							<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">{doc.tipo}</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

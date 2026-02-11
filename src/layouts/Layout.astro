@@ -1,0 +1,31 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Honduras Social — Fundación para el Desarrollo Comunitario',
+	description = 'Fundación dedicada a la educación, emprendimiento, inclusión y cooperación para el desarrollo de comunidades en Honduras.'
+} = Astro.props;
+
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<title>{title}</title>
+	</head>
+	<body class="m-0 w-full bg-white text-gray-800 font-body antialiased">
+		<slot />
+	</body>
+</html>

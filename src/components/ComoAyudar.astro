@@ -1,0 +1,65 @@
+---
+const formas = [
+	{
+		icono: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`,
+		titulo: 'Donación Monetaria',
+		descripcion: 'Tu aporte económico se destina directamente a los programas de educación, salud y emprendimiento en comunidades vulnerables.',
+		cta: 'Donar Ahora',
+		color: 'bg-secondary',
+		textColor: 'text-white',
+	},
+	{
+		icono: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>`,
+		titulo: 'Voluntariado',
+		descripcion: 'Únete a nuestro equipo de voluntarios. Necesitamos maestros, médicos, ingenieros y personas con ganas de servir.',
+		cta: 'Ser Voluntario',
+		color: 'bg-primary',
+		textColor: 'text-white',
+	},
+	{
+		icono: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`,
+		titulo: 'Alianzas Empresariales',
+		descripcion: 'Tu empresa puede ser parte del cambio. Ofrecemos programas de responsabilidad social corporativa con impacto medible.',
+		cta: 'Ser Aliado',
+		color: 'bg-accent',
+		textColor: 'text-white',
+	},
+	{
+		icono: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>`,
+		titulo: 'Donación en Especie',
+		descripcion: 'Materiales escolares, alimentos, ropa, equipos tecnológicos... todo suma para mejorar la vida de nuestras comunidades.',
+		cta: 'Donar Materiales',
+		color: 'bg-primary-light',
+		textColor: 'text-white',
+	},
+];
+---
+
+<section id="como-ayudar" class="py-20 lg:py-28 bg-warm">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Cómo Ayudar</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+				Tu apoyo <span class="text-primary">transforma vidas</span>
+			</h2>
+			<p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+				Hay muchas formas de contribuir al desarrollo de Honduras. Elige la que mejor se adapte a ti.
+			</p>
+		</div>
+
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+			{formas.map(forma => (
+				<div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all group text-center">
+					<div class:list={[forma.color, "w-16 h-16 rounded-full flex items-center justify-center text-white mx-auto mb-5"]}>
+						<Fragment set:html={forma.icono} />
+					</div>
+					<h3 class="text-lg font-bold text-gray-900 mb-3">{forma.titulo}</h3>
+					<p class="text-gray-600 text-sm leading-relaxed mb-5">{forma.descripcion}</p>
+					<a href="#contacto" class:list={[forma.color, forma.textColor, "inline-block font-semibold px-6 py-2.5 rounded-full text-sm hover:opacity-90 transition-opacity"]}>
+						{forma.cta}
+					</a>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

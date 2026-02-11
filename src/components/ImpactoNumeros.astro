@@ -1,0 +1,39 @@
+---
+const stats = [
+	{ numero: '50+', label: 'Comunidades beneficiadas', descripcion: 'En 12 departamentos de Honduras' },
+	{ numero: '5,000+', label: 'Personas impactadas', descripcion: 'Niños, jóvenes y adultos' },
+	{ numero: '30+', label: 'Proyectos realizados', descripcion: 'Educación, salud y emprendimiento' },
+	{ numero: '120+', label: 'Voluntarios activos', descripcion: 'Comprometidos con el cambio' },
+	{ numero: '15', label: 'Alianzas estratégicas', descripcion: 'Con ONGs y empresas' },
+	{ numero: '$500K+', label: 'Fondos canalizados', descripcion: 'Invertidos en desarrollo comunitario' },
+];
+---
+
+<section id="impacto" class="py-20 lg:py-28 bg-primary-dark text-white relative overflow-hidden">
+	<div class="absolute inset-0 opacity-10">
+		<div class="absolute -top-20 -left-20 w-80 h-80 bg-secondary rounded-full blur-3xl"></div>
+		<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+	</div>
+
+	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-highlight font-semibold text-sm uppercase tracking-wider">Nuestro Impacto</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3">
+				Números que hablan por <span class="text-highlight">nosotros</span>
+			</h2>
+			<p class="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
+				Cada cifra representa vidas transformadas, familias fortalecidas y comunidades que avanzan hacia un futuro mejor.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
+			{stats.map(stat => (
+				<div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+					<p class="text-4xl sm:text-5xl font-extrabold text-highlight">{stat.numero}</p>
+					<p class="text-lg font-semibold mt-2">{stat.label}</p>
+					<p class="text-sm text-white/50 mt-1">{stat.descripcion}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

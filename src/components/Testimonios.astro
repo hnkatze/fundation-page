@@ -1,0 +1,52 @@
+---
+const testimonios = [
+	{
+		nombre: 'María Elena Reyes',
+		rol: 'Beneficiaria — Emprende Honduras',
+		texto: 'Gracias a Honduras Social descubrí que sí podía tener mi propio negocio. El microcrédito y las mentorías me dieron las herramientas para abrir mi tienda de artesanías. Hoy mantengo a mi familia con dignidad.',
+		ubicacion: 'Comayagüela, Francisco Morazán',
+	},
+	{
+		nombre: 'Carlos Mejía',
+		rol: 'Voluntario Activo',
+		texto: 'Ser voluntario me cambió la perspectiva de vida. Ver la sonrisa de los niños cuando llegan los materiales escolares o cuando aprenden a usar una computadora por primera vez... eso no tiene precio.',
+		ubicacion: 'San Pedro Sula, Cortés',
+	},
+	{
+		nombre: 'Doña Santos',
+		rol: 'Líder Comunitaria — Agua para Todos',
+		texto: 'Por 30 años cargamos agua desde el río. Ahora, gracias al proyecto de agua potable, mis nietos pueden bañarse en casa y no se enferman. Es un milagro para nuestra comunidad.',
+		ubicacion: 'La Esperanza, Intibucá',
+	},
+];
+---
+
+<section class="py-20 lg:py-28 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Testimonios</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+				Voces que inspiran <span class="text-primary">esperanza</span>
+			</h2>
+			<p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+				Las historias de quienes han sido parte de nuestros programas son el mejor testimonio de nuestro trabajo.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-8">
+			{testimonios.map(t => (
+				<div class="bg-warm rounded-2xl p-8 relative">
+					<svg class="w-10 h-10 text-secondary/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" />
+					</svg>
+					<p class="text-gray-700 leading-relaxed mb-6 italic">"{t.texto}"</p>
+					<div class="border-t border-gray-200 pt-4">
+						<p class="font-bold text-gray-900">{t.nombre}</p>
+						<p class="text-sm text-primary font-medium">{t.rol}</p>
+						<p class="text-xs text-gray-400 mt-1">{t.ubicacion}</p>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

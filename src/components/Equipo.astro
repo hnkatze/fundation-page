@@ -1,0 +1,67 @@
+---
+const equipo = [
+	{
+		nombre: 'Ana Patricia Hernández',
+		cargo: 'Directora Ejecutiva',
+		bio: 'Abogada con 15 años de experiencia en desarrollo comunitario y derechos humanos.',
+	},
+	{
+		nombre: 'Roberto Amaya',
+		cargo: 'Director de Programas',
+		bio: 'Ingeniero industrial especializado en proyectos de cooperación internacional.',
+	},
+	{
+		nombre: 'Karla Díaz',
+		cargo: 'Coordinadora de Educación',
+		bio: 'Pedagoga con maestría en innovación educativa y experiencia en zonas rurales.',
+	},
+	{
+		nombre: 'Luis Fernando Reyes',
+		cargo: 'Director Financiero',
+		bio: 'Contador público con experiencia en gestión de fondos de organizaciones sin fines de lucro.',
+	},
+	{
+		nombre: 'Carmen Ramos',
+		cargo: 'Coordinadora de Voluntariado',
+		bio: 'Trabajadora social comprometida con la movilización comunitaria y el servicio.',
+	},
+	{
+		nombre: 'David Martínez',
+		cargo: 'Director de Comunicaciones',
+		bio: 'Periodista y comunicador social especializado en campañas de impacto social.',
+	},
+];
+
+function getInitials(nombre: string): string {
+	return nombre.split(' ').map(n => n[0]).slice(0, 2).join('');
+}
+
+const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-primary-light', 'bg-primary-dark', 'bg-secondary-light'];
+---
+
+<section id="equipo" class="py-20 lg:py-28 bg-warm">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Nuestro Equipo</span>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+				Las personas detrás del <span class="text-primary">cambio</span>
+			</h2>
+			<p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+				Un equipo multidisciplinario unido por la pasión de transformar Honduras.
+			</p>
+		</div>
+
+		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+			{equipo.map((miembro, i) => (
+				<div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+					<div class:list={[colors[i % colors.length], "w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4"]}>
+						{getInitials(miembro.nombre)}
+					</div>
+					<h3 class="font-bold text-gray-900 text-lg">{miembro.nombre}</h3>
+					<p class="text-primary font-medium text-sm mt-1">{miembro.cargo}</p>
+					<p class="text-gray-500 text-sm mt-3 leading-relaxed">{miembro.bio}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
