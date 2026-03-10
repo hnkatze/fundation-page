@@ -1,4 +1,19 @@
 ---
+/* TODO [IMAGEN]: Fotos de proyectos
+   Archivos necesarios (800x450 min, 16:9 landscape):
+   - /images/projects/diagnostico-cacao.webp
+   - /images/projects/liderazgo-jovenes.webp
+   - /images/projects/tejiendo-conexiones.webp
+   - /images/projects/girls-wellbeing.webp
+   - /images/projects/inclusion-emprendimiento.webp
+   - /images/projects/copa-creativa.webp
+   - /images/projects/damnificados-eta.webp
+   - /images/projects/voluntarios-internacionales.webp
+   - /images/projects/kits-robotica.webp
+   - /images/projects/talleres-liderazgo.webp
+   - /images/projects/diplomado-democracia.webp
+   - /images/projects/professional-fellows.webp
+   Agregar la propiedad `imagen` cuando estén listas */
 const proyectos = [
 	{
 		titulo: 'Diagnóstico Cacao — USAID',
@@ -9,6 +24,7 @@ const proyectos = [
 		socios: 'Rainforest Alliance, USAID',
 		estado: 'Completado',
 		color: 'bg-primary',
+		imagen: 'https://placehold.co/800x450/6B3FA0/white?text=Cacao+USAID', // /images/projects/diagnostico-cacao.webp
 	},
 	{
 		titulo: 'Liderazgo para Jóvenes',
@@ -19,6 +35,7 @@ const proyectos = [
 		socios: '',
 		estado: 'Completado',
 		color: 'bg-peach',
+		imagen: 'https://placehold.co/800x450/E8927C/white?text=Liderazgo+Jovenes',
 	},
 	{
 		titulo: 'Tejiendo Conexiones / CONECTA',
@@ -29,6 +46,7 @@ const proyectos = [
 		socios: 'Bridge for Billions',
 		estado: 'En curso',
 		color: 'bg-primary',
+		imagen: 'https://placehold.co/800x450/6B3FA0/white?text=CONECTA',
 	},
 	{
 		titulo: 'Girls Well Being Project',
@@ -39,6 +57,7 @@ const proyectos = [
 		socios: 'AHAM Education, Ictia, UN Women',
 		estado: 'En curso',
 		color: 'bg-secondary',
+		imagen: 'https://placehold.co/800x450/D946A8/white?text=Girls+Well+Being',
 	},
 	{
 		titulo: 'Inclusión al Emprendimiento',
@@ -49,6 +68,7 @@ const proyectos = [
 		socios: '',
 		estado: 'Completado',
 		color: 'bg-secondary',
+		imagen: 'https://placehold.co/800x450/D946A8/white?text=Inclusion',
 	},
 	{
 		titulo: 'Copa Creativa de Negocios',
@@ -59,6 +79,7 @@ const proyectos = [
 		socios: 'Varias empresas y gobierno',
 		estado: 'Completado',
 		color: 'bg-primary',
+		imagen: 'https://placehold.co/800x450/6B3FA0/white?text=Copa+Creativa',
 	},
 	{
 		titulo: 'Damnificados ETA e IOTA',
@@ -69,6 +90,7 @@ const proyectos = [
 		socios: 'Hondureños Solidarios en Barcelona',
 		estado: 'Completado',
 		color: 'bg-mint',
+		imagen: 'https://placehold.co/800x450/86EFAC/333?text=ETA+IOTA',
 	},
 	{
 		titulo: 'Voluntarios Internacionales',
@@ -79,6 +101,7 @@ const proyectos = [
 		socios: '',
 		estado: 'En curso',
 		color: 'bg-accent',
+		imagen: 'https://placehold.co/800x450/2DD4BF/white?text=Voluntarios',
 	},
 	{
 		titulo: 'Kits de Robótica',
@@ -89,6 +112,7 @@ const proyectos = [
 		socios: 'Escuela Rayito de Sol',
 		estado: 'Completado',
 		color: 'bg-secondary',
+		imagen: 'https://placehold.co/800x450/D946A8/white?text=Kits+Robotica',
 	},
 	{
 		titulo: 'Talleres Liderazgo y Democracia',
@@ -99,6 +123,7 @@ const proyectos = [
 		socios: 'Red de Cambio, Pastoral Penitenciaria, Caritas Honduras',
 		estado: 'En curso',
 		color: 'bg-peach',
+		imagen: 'https://placehold.co/800x450/E8927C/white?text=Talleres',
 	},
 	{
 		titulo: 'Diplomado Democracia e Inclusión',
@@ -109,6 +134,7 @@ const proyectos = [
 		socios: 'Pasos por Honduras, Ghapers (Personas Sordas)',
 		estado: 'En curso',
 		color: 'bg-peach',
+		imagen: 'https://placehold.co/800x450/E8927C/white?text=Diplomado',
 	},
 	{
 		titulo: 'Professional Fellows',
@@ -119,6 +145,7 @@ const proyectos = [
 		socios: 'ITD, Departamento de Estado EE.UU.',
 		estado: 'En curso',
 		color: 'bg-accent',
+		imagen: 'https://placehold.co/800x450/2DD4BF/white?text=Fellows',
 	},
 ];
 ---
@@ -138,7 +165,13 @@ const proyectos = [
 		<div class="proyectos-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			{proyectos.map((proyecto, i) => (
 				<div class="proyecto-card gsap-hidden bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
-					<div class:list={[proyecto.color, "h-2"]}></div>
+					{proyecto.imagen ? (
+						<div class="h-44 overflow-hidden">
+							<img src={proyecto.imagen} alt={proyecto.titulo} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+						</div>
+					) : (
+						<div class:list={[proyecto.color, "h-2"]}></div>
+					)}
 					<div class="p-6">
 						<div class="flex items-center justify-between mb-3">
 							<span class="text-xs font-semibold text-primary uppercase tracking-wider">{proyecto.categoria}</span>

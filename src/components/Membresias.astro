@@ -1,17 +1,20 @@
 ---
+/* TODO [IMAGEN]: Logos de redes/membresías (opcional)
+   Archivos: /images/partners/youth-action-net.webp, etc. (200x80 min)
+   Agregar propiedad `logo` a cada membresía cuando estén listos */
 const membresias = [
-	{ red: 'Red Mundial de Jóvenes Emprendedores', institucion: 'Youth Action Net' },
-	{ red: 'Emprendedores Sociales de Latinoamérica', institucion: 'Viva Trust / INCAE Business School' },
-	{ red: 'Voces Vitales Honduras', institucion: 'US Embassy — Vital Voices' },
-	{ red: 'Red de Emprendedores Sociales y Agentes de Cambio', institucion: 'World Youth Academy, ONU Viena' },
-	{ red: 'Emprendedores Innovadores en Israel', institucion: 'Mashav — YABT — Golda Meir' },
-	{ red: 'Red de Juventud Internacional', institucion: 'OIJ — Organización Iberoamericana para la Juventud' },
-	{ red: 'Cámara Internacional de Emprendedores', institucion: 'CAINEM Honduras' },
-	{ red: 'Veedores Sociales', institucion: 'CNA / USAID' },
-	{ red: 'Young Leaders of the Americas Initiative', institucion: 'YLAI — Embajada Americana' },
-	{ red: 'Red Juvenil de las Américas', institucion: 'YABT, OEA, Cumbre de las Américas' },
-	{ red: 'Juventudes Líderes', institucion: 'OXFAM Internacional' },
-	{ red: 'Jóvenes Líderes por la Democracia', institucion: 'Instituto Holandés — Unión Europea' },
+	{ red: 'Red Mundial de Jóvenes Emprendedores', institucion: 'Youth Action Net', logo: '' },
+	{ red: 'Emprendedores Sociales de Latinoamérica', institucion: 'Viva Trust / INCAE Business School', logo: '' },
+	{ red: 'Voces Vitales Honduras', institucion: 'US Embassy — Vital Voices', logo: '' },
+	{ red: 'Red de Emprendedores Sociales y Agentes de Cambio', institucion: 'World Youth Academy, ONU Viena', logo: '' },
+	{ red: 'Emprendedores Innovadores en Israel', institucion: 'Mashav — YABT — Golda Meir', logo: '' },
+	{ red: 'Red de Juventud Internacional', institucion: 'OIJ — Organización Iberoamericana para la Juventud', logo: '' },
+	{ red: 'Cámara Internacional de Emprendedores', institucion: 'CAINEM Honduras', logo: '' },
+	{ red: 'Veedores Sociales', institucion: 'CNA / USAID', logo: '' },
+	{ red: 'Young Leaders of the Americas Initiative', institucion: 'YLAI — Embajada Americana', logo: '' },
+	{ red: 'Red Juvenil de las Américas', institucion: 'YABT, OEA, Cumbre de las Américas', logo: '' },
+	{ red: 'Juventudes Líderes', institucion: 'OXFAM Internacional', logo: '' },
+	{ red: 'Jóvenes Líderes por la Democracia', institucion: 'Instituto Holandés — Unión Europea', logo: '' },
 ];
 ---
 
@@ -29,9 +32,14 @@ const membresias = [
 
 		<div class="membresias-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 			{membresias.map((m, i) => (
-				<div class="membresia-card gsap-hidden bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-					<p class="font-semibold text-gray-900 text-sm">{m.red}</p>
-					<p class="text-xs text-gray-500 mt-1">{m.institucion}</p>
+				<div class="membresia-card gsap-hidden bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex items-center gap-4">
+					{m.logo && (
+						<img src={m.logo} alt={m.institucion} class="w-10 h-10 object-contain shrink-0" />
+					)}
+					<div>
+						<p class="font-semibold text-gray-900 text-sm">{m.red}</p>
+						<p class="text-xs text-gray-500 mt-1">{m.institucion}</p>
+					</div>
 				</div>
 			))}
 		</div>

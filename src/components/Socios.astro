@@ -1,16 +1,22 @@
 ---
+/* TODO [IMAGEN]: Logos de socios internacionales
+   Archivos (300x120 min, fondo transparente):
+   - /images/partners/creative-business-cup.webp
+   - /images/partners/itd.webp */
 const socios = [
 	{
 		nombre: 'Creative Business Cup Networks',
 		pais: 'Dinamarca',
 		desde: 2019,
 		descripcion: 'Red global de emprendimiento creativo. Honduras Social es el representante en Honduras desde 2019.',
+		logo: 'https://placehold.co/300x120/f3f4f6/333?text=Creative+Business+Cup', // /images/partners/creative-business-cup.webp
 	},
 	{
 		nombre: 'Institute for Training and Development (ITD)',
 		pais: 'Estados Unidos',
 		desde: 2021,
 		descripcion: 'Programa Professional Fellows del Departamento de Estado de EE.UU., promoviendo el intercambio profesional internacional.',
+		logo: 'https://placehold.co/300x120/f3f4f6/333?text=ITD', // /images/partners/itd.webp
 	},
 ];
 ---
@@ -27,6 +33,11 @@ const socios = [
 		<div class="socios-grid grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
 			{socios.map((socio, i) => (
 				<div class="socio-card gsap-hidden bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all border border-gray-100">
+					{socio.logo && (
+						<div class="mb-4 h-16 flex items-center">
+							<img src={socio.logo} alt={`Logo ${socio.nombre}`} class="h-12 object-contain" />
+						</div>
+					)}
 					<div class="flex items-center gap-3 mb-4">
 						<div class="bg-primary/10 rounded-lg p-3">
 							<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
