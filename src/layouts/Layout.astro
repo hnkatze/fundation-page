@@ -108,23 +108,9 @@ import '../styles/global.css';
 		<slot />
 
 		<script>
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const el = entry.target as HTMLElement;
-						const delay = el.dataset.delay || '0';
-						el.style.animationDelay = `${delay}ms`;
-						el.classList.add('animate-fade-up');
-						el.classList.remove('opacity-0');
-						observer.unobserve(el);
-					}
-				});
-			}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-			document.querySelectorAll('[data-animate]').forEach(el => {
-				el.classList.add('opacity-0');
-				observer.observe(el);
-			});
+			import '../scripts/animations.ts';
 		</script>
+
+		<noscript><style>.gsap-hidden { opacity: 1 !important; }</style></noscript>
 	</body>
 </html>

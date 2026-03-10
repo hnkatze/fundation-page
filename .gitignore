@@ -23,11 +23,14 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# claude
+.claude/
+
+# spec-driven development
+openspec/
+
 # firebase
 firebase-debug.log
 
 # project context (not for repo)
 contexto.text
-
-# claude local settings
-.claude/settings.local.json

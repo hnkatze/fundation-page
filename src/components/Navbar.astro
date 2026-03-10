@@ -61,25 +61,4 @@ const links = [
 		});
 	});
 
-	const navbar = document.getElementById('navbar');
-	const logos = navbar?.querySelectorAll('a[href="/"] span') as NodeListOf<HTMLElement>;
-	const navLinks = navbar?.querySelectorAll('.hidden.md\\:flex a:not(.bg-secondary)');
-
-	function updateNavbar() {
-		if (!navbar) return;
-		if (window.scrollY > 80) {
-			navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
-			navbar.classList.remove('bg-transparent', 'border-transparent');
-			logos?.forEach((el, i) => { el.classList.remove('text-white'); el.classList.add(i === 0 ? 'text-primary' : 'text-secondary'); });
-			navLinks?.forEach(l => { l.classList.remove('text-white/80'); l.classList.add('text-gray-600'); });
-		} else {
-			navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
-			navbar.classList.add('bg-transparent', 'border-transparent');
-			logos?.forEach(el => { el.classList.remove('text-primary', 'text-secondary'); el.classList.add('text-white'); });
-			navLinks?.forEach(l => { l.classList.remove('text-gray-600'); l.classList.add('text-white/80'); });
-		}
-	}
-
-	window.addEventListener('scroll', updateNavbar);
-	updateNavbar();
 </script>

@@ -17,7 +17,7 @@ const membresias = [
 
 <section id="membresias" class="py-20 lg:py-28 bg-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div data-animate class="text-center mb-16">
+		<div class="section-header text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Redes y Membresías</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Conectados con el <span class="text-primary">mundo</span>
@@ -27,9 +27,9 @@ const membresias = [
 			</p>
 		</div>
 
-		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+		<div class="membresias-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 			{membresias.map((m, i) => (
-				<div data-animate data-delay={String(i * 80)} class="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+				<div class="membresia-card gsap-hidden bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
 					<p class="font-semibold text-gray-900 text-sm">{m.red}</p>
 					<p class="text-xs text-gray-500 mt-1">{m.institucion}</p>
 				</div>

@@ -14,7 +14,7 @@ const premios = [
 
 <section id="premios" class="py-20 lg:py-28 bg-white">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div data-animate class="text-center mb-16">
+		<div class="section-header text-center mb-16">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Reconocimientos</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
 				Premios que respaldan nuestro <span class="text-primary">compromiso</span>
@@ -24,9 +24,9 @@ const premios = [
 			</p>
 		</div>
 
-		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+		<div class="premios-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			{premios.map((premio, i) => (
-				<div data-animate data-delay={String(i * 100)} class="bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-lg transition-all border border-gray-100">
+				<div class="premio-card gsap-hidden bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-lg transition-all border border-gray-100">
 					<span class="inline-block bg-primary/10 text-primary font-bold text-sm px-3 py-1 rounded-full mb-4">{premio.anio}</span>
 					<h3 class="text-lg font-bold text-gray-900 mb-2">{premio.nombre}</h3>
 					<p class="text-gray-500 text-sm">{premio.entidad}</p>
