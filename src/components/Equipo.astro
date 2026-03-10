@@ -1,67 +1,36 @@
 ---
-const equipo = [
-	{
-		nombre: 'Ana Patricia Hernández',
-		cargo: 'Directora Ejecutiva',
-		bio: 'Abogada con 15 años de experiencia en desarrollo comunitario y derechos humanos.',
-	},
-	{
-		nombre: 'Roberto Amaya',
-		cargo: 'Director de Programas',
-		bio: 'Ingeniero industrial especializado en proyectos de cooperación internacional.',
-	},
-	{
-		nombre: 'Karla Díaz',
-		cargo: 'Coordinadora de Educación',
-		bio: 'Pedagoga con maestría en innovación educativa y experiencia en zonas rurales.',
-	},
-	{
-		nombre: 'Luis Fernando Reyes',
-		cargo: 'Director Financiero',
-		bio: 'Contador público con experiencia en gestión de fondos de organizaciones sin fines de lucro.',
-	},
-	{
-		nombre: 'Carmen Ramos',
-		cargo: 'Coordinadora de Voluntariado',
-		bio: 'Trabajadora social comprometida con la movilización comunitaria y el servicio.',
-	},
-	{
-		nombre: 'David Martínez',
-		cargo: 'Director de Comunicaciones',
-		bio: 'Periodista y comunicador social especializado en campañas de impacto social.',
-	},
-];
-
-function getInitials(nombre: string): string {
-	return nombre.split(' ').map(n => n[0]).slice(0, 2).join('');
-}
-
-const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-primary-light', 'bg-primary-dark', 'bg-secondary-light'];
+const fundadora = {
+	nombre: 'Karen Madrid',
+	nombreCompleto: 'Karen Yesenia Madrid Morales',
+	cargo: 'Fundadora & Directora Ejecutiva',
+	descripcion: 'Emprendedora social hondureña con más de 10 años de experiencia en la gestión de proyectos sociales, desarrollo de alianzas estratégicas, relaciones internacionales y dirección de programas de impacto social.',
+};
 ---
 
 <section id="equipo" class="py-20 lg:py-28 bg-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div data-animate class="text-center mb-16">
-			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Nuestro Equipo</span>
+			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Liderazgo</span>
 			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
-				Las personas detrás del <span class="text-primary">cambio</span>
+				Nuestra <span class="text-primary">fundadora</span>
 			</h2>
-			<p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-				Un equipo multidisciplinario unido por la pasión de transformar Honduras.
-			</p>
 		</div>
 
-		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-			{equipo.map((miembro, i) => (
-				<div data-animate data-delay={String(i * 100)} class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-					<div class:list={[colors[i % colors.length], "w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4"]}>
-						{getInitials(miembro.nombre)}
-					</div>
-					<h3 class="font-bold text-gray-900 text-lg">{miembro.nombre}</h3>
-					<p class="text-primary font-medium text-sm mt-1">{miembro.cargo}</p>
-					<p class="text-gray-500 text-sm mt-3 leading-relaxed">{miembro.bio}</p>
-				</div>
-			))}
+		<div data-animate class="max-w-2xl mx-auto text-center">
+			<div class="bg-primary w-24 h-24 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
+				KM
+			</div>
+			<h3 class="text-2xl font-bold text-gray-900">{fundadora.nombre}</h3>
+			<p class="text-primary font-medium mt-1">{fundadora.cargo}</p>
+			<p class="text-sm text-gray-500 mt-1">{fundadora.nombreCompleto}</p>
+			<p class="text-gray-600 mt-6 leading-relaxed max-w-xl mx-auto">{fundadora.descripcion}</p>
+
+			<div class="mt-10 pt-8 border-t border-gray-200">
+				<p class="text-gray-500 mb-4">¿Te gustaría ser parte del cambio?</p>
+				<a href="#contacto" class="inline-block bg-primary hover:bg-primary-light text-white font-semibold px-8 py-3 rounded-full transition-colors">
+					Únete a nuestro equipo
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
