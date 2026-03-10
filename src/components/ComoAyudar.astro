@@ -55,7 +55,7 @@ const formas = [
 					</div>
 					<h3 class="text-lg font-bold text-gray-900 mb-3">{forma.titulo}</h3>
 					<p class="text-gray-600 text-sm leading-relaxed mb-5">{forma.descripcion}</p>
-					<a href="#contacto" class:list={[forma.color, forma.textColor, "inline-block font-semibold px-6 py-2.5 rounded-full text-sm hover:opacity-90 transition-opacity"]}>
+					<a href={forma.cta === 'Donar Ahora' ? '#donaciones' : '#contacto'} class:list={[forma.color, forma.textColor, "inline-block font-semibold px-6 py-2.5 rounded-full text-sm hover:opacity-90 transition-opacity"]}>
 						{forma.cta}
 					</a>
 				</div>
