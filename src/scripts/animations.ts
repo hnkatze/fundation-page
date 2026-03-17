@@ -215,16 +215,15 @@ function initNavbar(): void {
       lastScrollY = scrollY;
 
       // Toggle navbar style based on scroll position
-      const logos = nav.querySelectorAll<HTMLElement>('a[href="/"] span');
+      const logoWhite = nav.querySelector<HTMLElement>('#logo-white');
+      const logoColor = nav.querySelector<HTMLElement>('#logo-color');
       const navLinks = nav.querySelectorAll('.hidden.md\\:flex a:not(.bg-secondary)');
 
       if (scrollY > 80) {
         nav.classList.add('bg-white/90', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
         nav.classList.remove('bg-transparent', 'border-transparent');
-        logos.forEach((el, i) => {
-          el.classList.remove('text-white');
-          el.classList.add(i === 0 ? 'text-primary' : 'text-secondary');
-        });
+        logoWhite?.classList.add('opacity-0');
+        logoColor?.classList.remove('opacity-0');
         navLinks.forEach(l => {
           l.classList.remove('text-white/80');
           l.classList.add('text-gray-600');
@@ -232,10 +231,8 @@ function initNavbar(): void {
       } else {
         nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'border-gray-100', 'shadow-sm');
         nav.classList.add('bg-transparent', 'border-transparent');
-        logos.forEach(el => {
-          el.classList.remove('text-primary', 'text-secondary');
-          el.classList.add('text-white');
-        });
+        logoWhite?.classList.remove('opacity-0');
+        logoColor?.classList.add('opacity-0');
         navLinks.forEach(l => {
           l.classList.remove('text-gray-600');
           l.classList.add('text-white/80');
