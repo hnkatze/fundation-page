@@ -17,7 +17,7 @@ function setFinalStates(): void {
     '.valor-card', '.pilares-card', '.stat-card',
     '.proyecto-card', '.testimonio-card', '.ayudar-card',
     '.equipo-card', '.documento-card',
-    '.premio-card', '.membresia-card', '.socio-card',
+    '.premio-card', '.nuevo-proyecto-card', '.membresia-card', '.socio-card',
   ];
   gsap.set(selectors.join(', '), { opacity: 1, y: 0, scale: 1 });
 
@@ -160,6 +160,7 @@ function initStaggerReveals(): void {
     { selector: '.equipo-grid', cards: '.equipo-card' },
     { selector: '.documentos-list', cards: '.documento-card' },
     { selector: '.premios-grid', cards: '.premio-card' },
+    { selector: '.nuevos-proyectos-grid', cards: '.nuevo-proyecto-card' },
     { selector: '.membresias-grid', cards: '.membresia-card' },
     { selector: '.socios-grid', cards: '.socio-card' },
   ];

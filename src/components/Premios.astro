@@ -1,20 +1,65 @@
 ---
 const premios = [
-	{ nombre: 'Premio Global Resiliency Fund', entidad: 'International Youth Foundation, N. Conrad Hilton, Burberry (USA)', anio: 2021 },
-	{ nombre: 'Finalista Premio Mujeres Adelante', entidad: 'Banco Ficohsa', anio: 2021 },
-	{ nombre: 'Premios Indio Lempira a la Excelencia', entidad: 'Comunidad hondureña migrante en Barcelona', anio: 2019 },
-	{ nombre: 'Reconocimiento Agente de Cambio', entidad: 'JCI San Pedro Sula', anio: 2018 },
-	{ nombre: 'Premio Voces Vitales — Mujeres Transformando Honduras', entidad: 'Voces Vitales', anio: 2018 },
-	{ nombre: 'Premio Quetglas', entidad: 'Un premio a la caridad hecha persona', anio: 2018 },
-	{ nombre: 'Premio Honduras Innova', entidad: 'Gobierno de Honduras, UTH', anio: 2017 },
-	{ nombre: 'Premio Reto Emprendedor', entidad: 'Centromype, SICA, Gobierno de Taiwán', anio: 2016 },
-	{ nombre: 'Premio Yo Emprendedor', entidad: 'UNITEC, Laureate University, Youth Action Net', anio: 2013 },
+	{
+		nombre: 'Premio Global Resiliency Fund',
+		entidad: 'International Youth Foundation, N. Conrad Hilton, Burberry (USA)',
+		anio: 2021,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776465284/Proyecto_nuevo_24_somsfv.png',
+	},
+	{
+		nombre: 'Premios Indio Lempira a la Excelencia',
+		entidad: 'Comunidad hondureña migrante en Barcelona',
+		anio: 2019,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776464858/Proyecto_nuevo_23_ts0xjp.png',
+	},
+	{
+		nombre: 'Reconocimiento Agente de Cambio',
+		entidad: 'JCI San Pedro Sula',
+		anio: 2018,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776464616/Proyecto_nuevo_22_lftqkv.png',
+	},
+	{
+		nombre: 'Premio Voces Vitales — Mujeres Transformando Honduras',
+		entidad: 'Voces Vitales',
+		anio: 2018,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776463403/Proyecto_nuevo_18_vnpami.png',
+	},
+	{
+		nombre: 'Premio Quetglas',
+		entidad: 'Un premio a la caridad hecha persona',
+		anio: 2018,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776463106/Proyecto_nuevo_17_sanikw.png',
+	},
+	{
+		nombre: 'Premio Honduras Innova',
+		entidad: 'Gobierno de Honduras, UTH',
+		anio: 2017,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776463540/Proyecto_nuevo_19_gls5qw.png',
+	},
+	{
+		nombre: 'Premio Reto Emprendedor',
+		entidad: 'Centromype, SICA, Gobierno de Taiwán',
+		anio: 2016,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776464434/Proyecto_nuevo_21_yg7hel.png',
+	},
+	{
+		nombre: 'Portada Revista Microempresas & Microfinanzas',
+		entidad: 'Grupo Cerca — Emprendedora ganadora de Centroamérica y México. Portada y reportaje de 2 páginas.',
+		anio: 2014,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776467228/Proyecto_nuevo_25_p1lvyi.png',
+	},
+	{
+		nombre: 'Premio Yo Emprendedor',
+		entidad: 'UNITEC, Laureate University, Youth Action Net',
+		anio: 2013,
+		imagen: 'https://res.cloudinary.com/dfnsygose/image/upload/v1776463753/Proyecto_nuevo_20_saz3fr.png',
+	},
 ];
 
 const premiosOrdenados = [...premios].sort((a, b) => b.anio - a.anio);
 ---
 
-<section id="premios" class="py-20 lg:py-28 bg-white">
+<section id="premios" class="py-20 lg:py-28 bg-gradient-to-b from-white to-warm">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="section-header text-center mb-20">
 			<span class="text-secondary font-semibold text-sm uppercase tracking-wider">Reconocimientos</span>
@@ -26,45 +71,55 @@ const premiosOrdenados = [...premios].sort((a, b) => b.anio - a.anio);
 			</p>
 		</div>
 
-		<div class="premios-grid relative max-w-5xl mx-auto">
-			<div class="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20 lg:-translate-x-1/2" aria-hidden="true"></div>
+		<div class="premios-grid relative max-w-6xl mx-auto">
+			<div class="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/10 via-primary/60 to-primary/10 lg:-translate-x-1/2" aria-hidden="true"></div>
 
-			<div class="space-y-10 lg:space-y-16">
+			<div class="space-y-12 lg:space-y-20">
 				{premiosOrdenados.map((premio, i) => {
 					const isLeft = i % 2 === 0;
 					return (
-						<div class="premio-card gsap-hidden relative pl-14 lg:pl-0">
-							<div class:list={[
-								'absolute left-4 lg:left-1/2 top-4 w-4 h-4 rounded-full bg-primary ring-4 ring-white shadow-lg -translate-x-1/2 z-10 transition-transform duration-300',
-								'group-hover:scale-125',
-							]} aria-hidden="true">
-								<div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-30"></div>
+						<div class="premio-card gsap-hidden relative pl-16 lg:pl-0 group">
+							<div class="absolute left-4 lg:left-1/2 top-10 w-5 h-5 rounded-full bg-white border-4 border-primary shadow-lg -translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-125" aria-hidden="true">
+								<div class="absolute inset-0 rounded-full bg-primary/40 animate-ping"></div>
 							</div>
 
 							<div class:list={[
-								'group lg:w-[calc(50%-2rem)] flex',
-								isLeft ? 'lg:mr-auto lg:pr-8 lg:justify-end' : 'lg:ml-auto lg:pl-8 lg:justify-start',
+								'lg:w-[calc(50%-2.5rem)]',
+								isLeft ? 'lg:mr-auto lg:pr-12' : 'lg:ml-auto lg:pl-12',
 							]}>
-								<div class:list={[
-									'w-full bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/30 hover:-translate-y-1',
-									isLeft ? 'lg:text-right' : 'lg:text-left',
-								]}>
-									<div class:list={[
-										'flex items-center gap-3 mb-4',
-										isLeft ? 'lg:justify-end' : 'lg:justify-start',
-									]}>
-										<span class="text-4xl lg:text-5xl font-extrabold text-primary leading-none">
-											{premio.anio}
-										</span>
-										<div class="flex-1 h-px bg-gradient-to-r from-primary/40 to-transparent lg:hidden"></div>
+								<article class="relative bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/30 hover:-translate-y-2">
+									<div class="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+										<img
+											src={premio.imagen}
+											alt={premio.nombre}
+											class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+											loading="lazy"
+										/>
+
+										<div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+
+										<div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
+											<span class="text-2xl lg:text-3xl font-extrabold text-primary leading-none block">
+												{premio.anio}
+											</span>
+										</div>
+
+										<div class="absolute top-4 right-4 w-10 h-10 bg-highlight/95 rounded-full shadow-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+											<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+												<path d="M5 16L3 6l5.5 4L12 4l3.5 6L21 6l-2 10H5zm2.7-2h8.6l.9-4.4-2.1 1.5-2.6-4.4-2.6 4.4-2.1-1.5.9 4.4z"/>
+											</svg>
+										</div>
 									</div>
-									<h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-primary transition-colors">
-										{premio.nombre}
-									</h3>
-									<p class="text-sm text-gray-500 leading-relaxed">
-										{premio.entidad}
-									</p>
-								</div>
+
+									<div class="p-6 lg:p-8">
+										<h3 class="text-lg lg:text-2xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-primary transition-colors">
+											{premio.nombre}
+										</h3>
+										<p class="text-sm lg:text-base text-gray-500 leading-relaxed">
+											{premio.entidad}
+										</p>
+									</div>
+								</article>
 							</div>
 						</div>
 					);
